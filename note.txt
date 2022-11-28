@@ -1,0 +1,10 @@
+There are two part in OS:
+  i. Kernel
+  ii. User Interface
+
+Checking version of Python:
+    
+    python --version
+    
+pyPI = Python Package Index
+"pip" is used in command line to install, update, and remove external Python moudles.
