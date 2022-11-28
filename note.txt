@@ -8,3 +8,34 @@ Checking version of Python:
     
 pyPI = Python Package Index
 "pip" is used in command line to install, update, and remove external Python moudles.
+
+########
+
+Running python through command prompt.
+
+Starting python on linux:
+python3
+
+Running .py file:
+cat hello.py
+
+Running .py file:
+python3 hello.py
+
+editing a file in linux:
+nano file_name.txt
+
+If we add the following line then the file will automatically run as a python file:
+#!/usr/bin/env python3
+
+To make executable a python file:
+chmod +x hellow_world.py
+
+then running the file like:
+./hellow_world.py
+
+######
+
+Creating own Python Modules:
+
+
