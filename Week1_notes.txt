@@ -38,4 +38,42 @@ then running the file like:
 
 Creating own Python Modules:
 
+######
+
+To find disk usage and so on:
+
+import shutil
+du = shutil.disk_usage("/)
+print(du)
+
+#finding the percentage usage of the disk
+du.free / du.total * 100
+
+To find CPU usage and so on:
+
+import psutil
+psutil.cpu_percent(0.1) # 0.1 second
+psutil.cpu_percent(0.5) # 0.5 seconds
+
+
+Now writing our PC health checking script.
+
+#!/usr/bin/env python3
+import shutil
+import psutil
+
+def check_disk_usage(disk):
+  du = shutil.disk_usage(disk)
+  free = du.free/du.total*100
+  return free > 20
+  
+ def check_cpu_usage():
+  usage = psutil.cpu_percent(1)
+  return usage < 75
+  
+ if not check_disk_usage("/") or not check_cpu_usage():
+  print("Error")
+ else:
+  print("Everything is OK!")
+
 
