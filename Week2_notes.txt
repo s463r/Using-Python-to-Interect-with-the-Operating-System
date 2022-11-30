@@ -1,0 +1,34 @@
+## Beginning of week 2 ##
+
+### Reading and Writing Files ###
+
+> To open a file:
+
+file = open("spider.txt") ## opening file
+print(file.readline())
+
+print(file.read())
+
+file.close() ## closing file
+
+* It is a good idea to close your file whenever you are done with your file.
+
+Another best way to open and close file is:
+
+with open("spyder.txt") as file:
+  print(file.readline())
+  
+This will close the file automatically.
+
+> To print every lines in upper case:
+
+with open("spider.txt") as file:
+  for line in file:
+    print(line.upper())
+    
+> To print every lines in upper case but this time trying to avoiding the line spacing:
+
+with open("spider.txt") as file:
+  for line in file:
+      print(line.strip().upper()) # this will strip all the blank spaces in the line including new line char
+      
