@@ -31,4 +31,83 @@ with open("spider.txt") as file:
 with open("spider.txt") as file:
   for line in file:
       print(line.strip().upper()) # this will strip all the blank spaces in the line including new line char
-      
+
+> Putting the file in a list so that we chould then sort the list and print:
+
+file = open("spider.txt")
+lines = file.readlines()
+file.close()
+lines.sort()
+print(lines)
+
+> To write on a file:
+
+with open("spider.txt", "w") as file:
+  file.write("It was a dark and stormy night")
+  
+### Managing Files and Directories ###
+
+
+> to delete a file:
+
+import os
+os.remove("novel.txt")
+os.rename("first_draft.txt","finished_masterpiece.txt") # renaming a file name
+
+> To check if a file does exist in the directory:
+
+os.path.exists("file_name.txt")
+
+> To get the size of the file:
+
+os.path.getsize("spider.txt")
+
+> To check when the file was last modified:
+
+os.path.getmtime("spider.txt")
+import datetime
+timestamp = os.path.getmtime("spider.txt") # will return time in form of unix timestamp
+datetime.datetime.fromtimestamp(timestamp) # converting the timestamp
+
+
+> finding file using absolute file path:
+
+os.path.abspath("spider.txt")
+
+> To get the current working directory:
+
+print(os.getcwd())
+
+> to create a new directory:
+
+os.mkdir("new_dir")
+
+> to change directory:
+
+os.chdir("new_dir")
+
+> to remove directory:
+
+os.mkdir("newer_dir")
+os.rmdir("newer_dir") # only delete directories which are empty, otherwise does not work.
+
+> To find all the directories inside a given directory:
+
+os.listdir("website")
+
+
+dir = "website"
+for name in os.listdir("dir"):
+  fullname = os.path.join(dir,name)
+  if os.path.isdir(fullname):
+    print(f"{fullname} is a directory")
+  else:
+    print(f"{} is a file")
+
+
+
+> 
+
+
+
+
